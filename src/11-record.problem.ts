@@ -1,7 +1,12 @@
 import { expect, it } from "vitest";
+import { string } from "zod";
 
 const createCache = () => {
-  const cache = {};
+  type Params = {
+    [id: string]: string
+  };
+
+  const cache: Params = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;
